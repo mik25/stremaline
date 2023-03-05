@@ -34,14 +34,7 @@ function noSpecialChars(str) {
 
 async function search(query) {
   try {
-    const response = await axios.post('http://palined.com/search/opendir.html?blog=0&filetype=%252B%28.mkv%7C.mp4%7C.avi%7C.mov%7C.mpg%7C.wmv%29&string=' + encodeURIComponent(query));
-    const body = response.data;
-    if (Array.isArray(body) && body.length) {
-      const streams = body.map(toStream);
-      console.log(`Found ${streams.length} streams for query '${query}'`);
-      return streams;
-    } else {
-      throw new Error('Response body is empty');
+    const response = await axios.get(`https://www.google.com/search?q=${encodeURIComponent(query)}+${encodeURIComponent('intitle:"index of" -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) -inurl:(hypem|unknownsecret|sirens|writeups|trimediacentral|articlescentral|listen77|mp3raid|mp3toss|mp3drug|theindexof|index_of|wallywashis|indexofmp3)')}&num=50`);
     }
   } catch (error) {
     throw error;
