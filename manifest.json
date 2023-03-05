@@ -4,7 +4,7 @@
   "name": "Stremioline",
   "description": "A Stremio addon that uses palined.com as a scraper",
   "logo": "http://palined.com/search/opendir_files/logo_sm.png",
-  "resources": ["movie","series","tv"],
+  "resources": ["stream"],
   "types": ["movie", "series"],
   "idProperty": "imdb_id",
   "catalogs": []
